@@ -7,7 +7,7 @@ import resume from '../images/resume_builder.png'
 import valentines from '../images/valentines.png'
 import financial from '../images/financial.png'
 import community from '../images/community.png'
-import petworld from '../images/PETWORLD.png'
+import petworld from '../images/petworld.png'
 import cafe from '../images/islanilola.png'
 import uic from '../images/uic.jpg'
 const projects = [
