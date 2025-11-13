@@ -109,7 +109,7 @@ export const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">Email</h3>
-                  <p className="text-sm text-muted-foreground">your.email@example.com</p>
+                  <p className="text-sm text-muted-foreground">glennoliva122@gmail.com</p>
                 </div>
               </div>
             </Card>
@@ -122,7 +122,7 @@ export const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">Phone</h3>
-                  <p className="text-sm text-muted-foreground">+1 (555) 123-4567</p>
+                  <p className="text-sm text-muted-foreground">+63 993 837 4992</p>
                 </div>
               </div>
             </Card>
@@ -135,7 +135,7 @@ export const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">Location</h3>
-                  <p className="text-sm text-muted-foreground">Your City, Country</p>
+                  <p className="text-sm text-muted-foreground">Davao City, Philippines</p>
                 </div>
               </div>
             </Card>

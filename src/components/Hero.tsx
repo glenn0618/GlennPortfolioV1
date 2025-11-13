@@ -26,13 +26,13 @@ export const Hero = () => {
             Hello, I'm{" "}
             <span className="relative inline-block">
               <span className="relative bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                Your Name
+                Glenn
               </span>
               <span className="absolute inset-0 blur-lg bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent opacity-50"></span>
             </span>
           </h1>
           <p className="text-xl sm:text-2xl text-primary-foreground/90 max-w-2xl mx-auto drop-shadow-lg">
-            A passionate developer crafting beautiful digital experiences
+            A passionate Web Developer & Mobile dev Bring your ideas into reality
           </p>
         </div>
 
@@ -46,17 +46,22 @@ export const Hero = () => {
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform relative z-10" />
             <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
           </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            onClick={() => {
-              const element = document.querySelector("#projects");
-              element?.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="border-2 border-primary-foreground/30 hover:border-primary-foreground/60 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 shadow-3d hover:shadow-3d-hover hover:-translate-y-1 transition-all duration-300"
-          >
-            View Projects
-          </Button>
+ <Button
+  size="lg"
+  variant="outline"
+  onClick={() => {
+    const element = document.querySelector("#projects");
+    element?.scrollIntoView({ behavior: "smooth" });
+  }}
+  className="border-2 border-primary-foreground/30 hover:border-primary-foreground/60 
+             bg-transparent text-primary-foreground hover:text-white 
+             hover:bg-primary-foreground/10 shadow-3d hover:shadow-3d-hover 
+             hover:-translate-y-1 transition-all duration-300"
+>
+  View Projects
+</Button>
+
+
         </div>
 
         <div className="pt-8 animate-in fade-in duration-700 delay-300">

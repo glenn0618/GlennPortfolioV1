@@ -6,22 +6,38 @@ const services = [
   {
     icon: Code,
     title: "Web Development",
-    description: "Building responsive and performant web applications using modern technologies and best practices.",
+    description:
+      "Building responsive and performant web applications using modern technologies and best practices.",
   },
   {
     icon: Smartphone,
     title: "Responsive Design",
-    description: "Creating beautiful, mobile-first designs that work seamlessly across all devices and screen sizes.",
+    description:
+      "Creating beautiful, mobile-first designs that work seamlessly across all devices and screen sizes.",
   },
   {
     icon: Globe,
     title: "API Integration",
-    description: "Integrating third-party services and building custom APIs for seamless data exchange.",
+    description:
+      "Integrating third-party services and building custom APIs for seamless data exchange.",
   },
   {
     icon: Paintbrush,
     title: "UI/UX Design",
-    description: "Designing intuitive user interfaces with focus on user experience and accessibility.",
+    description:
+      "Designing intuitive user interfaces with a strong focus on user experience, accessibility, and visual appeal.",
+  },
+  {
+    icon: Smartphone,
+    title: "Mobile Development",
+    description:
+      "Developing cross-platform mobile applications using modern frameworks such as Flutter and React Native. Ensures smooth performance, optimized UI, and native-like user experiences for both Android and iOS users.",
+  },
+  {
+    icon: Globe,
+    title: "Virtual Assistance (VA Services)",
+    description:
+      "Providing professional virtual assistance for administrative, research, and project management tasks. Skilled in organizing workflows, handling communication, and ensuring productivity through reliable remote support.",
   },
 ];
 

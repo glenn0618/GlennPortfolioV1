@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from '../images/logo_new.png'
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -40,16 +41,21 @@ export const Navigation = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <a
-            href="#home"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection("#home");
-            }}
-            className="text-xl font-bold text-foreground"
-          >
-            Portfolio
-          </a>
+   <a
+  href="#home"
+  onClick={(e) => {
+    e.preventDefault();
+    scrollToSection("#home");
+  }}
+  className="flex items-center"
+>
+  <img
+    src={logo} // 🖼️ replace this with your actual logo path
+    alt="Portfolio Logo"
+    className="h-20 w-auto" // adjust the height and width as needed
+  />
+</a>
+
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-1">

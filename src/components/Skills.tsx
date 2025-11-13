@@ -6,22 +6,25 @@ const skillCategories = [
   {
     title: "Frontend Development",
     icon: Layout,
-    skills: ["React", "TypeScript", "Tailwind CSS", "Next.js", "HTML5/CSS3"],
+    skills: ["React", "TypeScript", "Tailwind CSS", "Next.js", "HTML5/CSS3" , "Tailwind CSS" , 
+      "Vue.js" , "Angular" , "Shadcn/ui" ,"Flutter"
+      
+    ],
   },
   {
     title: "Backend Development",
     icon: Database,
-    skills: ["Node.js", "Express", "PostgreSQL", "MongoDB", "REST APIs"],
+    skills: ["Node.js", "Express", "PostgreSQL", "MongoDB", "REST APIs" , "Laravel", "Flask", "Postman" , "Firebase" , "MySql", ],
   },
   {
     title: "Design & UI/UX",
     icon: Palette,
-    skills: ["Figma", "Responsive Design", "Wireframing", "Prototyping", "User Research"],
+    skills: ["Figma", "Funnels" , "WordPress" , "Photopea"],
   },
   {
     title: "Tools & Others",
     icon: Code2,
-    skills: ["Git/GitHub", "VS Code", "Docker", "CI/CD", "Agile/Scrum"],
+    skills: ["Git/GitHub", "Bitbucket" , "Go High Level", "Clickup", "Leads", "Social Management", "VS Code", "Docker", "CI/CD", "Agile/Scrum"],
   },
 ];
 

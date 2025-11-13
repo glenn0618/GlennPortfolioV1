@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Github, Linkedin, Twitter } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -14,7 +14,7 @@ export const Footer = () => {
 
           <div className="flex gap-4">
             <a
-              href="https://github.com"
+              href="https://github.com/GlennOliva/Capstone_DavaoPetworld"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 bg-primary-foreground/10 rounded-lg hover:bg-primary-foreground/20 transition-colors"
@@ -22,7 +22,7 @@ export const Footer = () => {
               <Github className="h-5 w-5" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/glenn-oliva-a479a0253/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 bg-primary-foreground/10 rounded-lg hover:bg-primary-foreground/20 transition-colors"
@@ -30,19 +30,19 @@ export const Footer = () => {
               <Linkedin className="h-5 w-5" />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://www.facebook.com/glennoliva12"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 bg-primary-foreground/10 rounded-lg hover:bg-primary-foreground/20 transition-colors"
             >
-              <Twitter className="h-5 w-5" />
+              <Facebook className="h-5 w-5" />
             </a>
           </div>
         </div>
 
         <div className="mt-8 pt-8 border-t border-primary-foreground/20 text-center">
           <p className="text-sm text-primary-foreground/80">
-            © {new Date().getFullYear()} Your Name. All rights reserved.
+            © {new Date().getFullYear()} Glenn Angelo Oliva. All rights reserved.
           </p>
         </div>
       </div>
