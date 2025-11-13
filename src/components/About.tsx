@@ -9,8 +9,9 @@ export const About = () => {
           <div className="w-20 h-1 bg-primary mx-auto"></div>
         </div>
 
-        <Card className="p-8 sm:p-12 shadow-elegant border-border">
-          <div className="space-y-6 text-center sm:text-left">
+        <Card className="p-8 sm:p-12 shadow-3d hover:shadow-3d-hover border-border bg-gradient-card transition-all duration-500 hover:-translate-y-2 transform-gpu relative overflow-hidden group">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div className="space-y-6 text-center sm:text-left relative z-10">
             <p className="text-lg text-muted-foreground leading-relaxed">
               I'm a dedicated developer with a passion for creating elegant solutions to complex problems. 
               With expertise in modern web technologies, I focus on building responsive, user-friendly 

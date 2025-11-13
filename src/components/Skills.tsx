@@ -39,23 +39,26 @@ export const Skills = () => {
             return (
               <Card
                 key={index}
-                className="p-8 shadow-elegant hover:shadow-hover transition-all duration-300 border-border group"
+                className="p-8 shadow-3d hover:shadow-3d-hover transition-all duration-500 border-border group hover:-translate-y-2 transform-gpu bg-gradient-card relative overflow-hidden"
               >
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-accent rounded-lg group-hover:bg-primary transition-colors">
-                    <Icon className="h-6 w-6 text-foreground group-hover:text-primary-foreground transition-colors" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative z-10">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="p-3 bg-accent rounded-lg group-hover:bg-primary transition-all duration-300 shadow-md group-hover:shadow-lg group-hover:scale-110 transform-gpu">
+                      <Icon className="h-6 w-6 text-foreground group-hover:text-primary-foreground transition-colors" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">{category.title}</h3>
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground">{category.title}</h3>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill, skillIndex) => (
-                    <span
-                      key={skillIndex}
-                      className="px-4 py-2 bg-secondary text-secondary-foreground rounded-full text-sm font-medium"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((skill, skillIndex) => (
+                      <span
+                        key={skillIndex}
+                        className="px-4 py-2 bg-secondary text-secondary-foreground rounded-full text-sm font-medium shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all cursor-default"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </Card>
             );

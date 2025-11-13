@@ -42,15 +42,18 @@ export const Services = () => {
             return (
               <Card
                 key={index}
-                className="p-8 shadow-elegant hover:shadow-hover transition-all duration-300 border-border group cursor-pointer"
+                className="p-8 shadow-3d hover:shadow-3d-hover transition-all duration-500 border-border group cursor-pointer hover:-translate-y-2 transform-gpu bg-gradient-card relative overflow-hidden"
               >
-                <div className="mb-6">
-                  <div className="inline-block p-4 bg-accent rounded-lg group-hover:bg-primary transition-colors">
-                    <Icon className="h-8 w-8 text-foreground group-hover:text-primary-foreground transition-colors" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative z-10">
+                  <div className="mb-6">
+                    <div className="inline-block p-4 bg-accent rounded-lg group-hover:bg-primary transition-all duration-300 shadow-md group-hover:shadow-lg group-hover:scale-110 group-hover:rotate-3 transform-gpu">
+                      <Icon className="h-8 w-8 text-foreground group-hover:text-primary-foreground transition-colors" />
+                    </div>
                   </div>
+                  <h3 className="text-2xl font-semibold text-foreground mb-4 group-hover:text-primary transition-colors">{service.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
                 </div>
-                <h3 className="text-2xl font-semibold text-foreground mb-4">{service.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{service.description}</p>
               </Card>
             );
           })}

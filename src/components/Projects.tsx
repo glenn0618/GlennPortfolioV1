@@ -49,37 +49,42 @@ export const Projects = () => {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="overflow-hidden shadow-elegant hover:shadow-hover transition-all duration-300 border-border group"
+              className="overflow-hidden shadow-3d hover:shadow-3d-hover transition-all duration-500 border-border group hover:-translate-y-2 transform-gpu bg-gradient-card"
             >
-              <div className="h-48 bg-gradient-dark"></div>
-              <div className="p-6">
-                <h3 className="text-2xl font-semibold text-foreground mb-3">{project.title}</h3>
-                <p className="text-muted-foreground mb-4 leading-relaxed">{project.description}</p>
-                
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-xs font-medium"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+              <div className="h-48 bg-gradient-dark relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+              <div className="p-6 relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative z-10">
+                  <h3 className="text-2xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">{project.title}</h3>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">{project.description}</p>
+                  
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tags.map((tag, tagIndex) => (
+                      <span
+                        key={tagIndex}
+                        className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-shadow"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
 
-                <div className="flex gap-4">
-                  <Button variant="outline" size="sm" asChild>
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <Github className="h-4 w-4 mr-2" />
-                      Code
-                    </a>
-                  </Button>
-                  <Button size="sm" asChild>
-                    <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      Demo
-                    </a>
-                  </Button>
+                  <div className="flex gap-4">
+                    <Button variant="outline" size="sm" asChild className="hover:-translate-y-0.5 transition-transform">
+                      <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        <Github className="h-4 w-4 mr-2" />
+                        Code
+                      </a>
+                    </Button>
+                    <Button size="sm" asChild className="shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all">
+                      <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        Demo
+                      </a>
+                    </Button>
+                  </div>
                 </div>
               </div>
             </Card>

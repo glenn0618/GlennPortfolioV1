@@ -48,8 +48,9 @@ export const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
-            <Card className="p-8 shadow-elegant border-border">
-              <form onSubmit={handleSubmit} className="space-y-6">
+            <Card className="p-8 shadow-3d hover:shadow-3d-hover transition-all duration-500 border-border bg-gradient-card group hover:-translate-y-1 transform-gpu relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                 <div className="space-y-2">
                   <Label htmlFor="name">Name</Label>
                   <Input
@@ -59,7 +60,7 @@ export const Contact = () => {
                     onChange={handleChange}
                     placeholder="Your name"
                     required
-                    className="border-border"
+                    className="border-border shadow-sm hover:shadow-md transition-shadow"
                   />
                 </div>
 
@@ -73,7 +74,7 @@ export const Contact = () => {
                     onChange={handleChange}
                     placeholder="your.email@example.com"
                     required
-                    className="border-border"
+                    className="border-border shadow-sm hover:shadow-md transition-shadow"
                   />
                 </div>
 
@@ -86,11 +87,11 @@ export const Contact = () => {
                     onChange={handleChange}
                     placeholder="Tell me about your project..."
                     required
-                    className="min-h-[150px] border-border"
+                    className="min-h-[150px] border-border shadow-sm hover:shadow-md transition-shadow"
                   />
                 </div>
 
-                <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
+                <Button type="submit" className="w-full bg-primary hover:bg-primary/90 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all">
                   Send Message
                 </Button>
               </form>
@@ -98,37 +99,40 @@ export const Contact = () => {
           </div>
 
           <div className="space-y-6">
-            <Card className="p-6 shadow-elegant border-border">
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-accent rounded-lg">
-                  <Mail className="h-5 w-5 text-foreground" />
+            <Card className="p-6 shadow-3d hover:shadow-3d-hover transition-all duration-500 border-border group hover:-translate-y-1 transform-gpu bg-gradient-card relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="flex items-start gap-4 relative z-10">
+                <div className="p-3 bg-accent rounded-lg shadow-md group-hover:shadow-lg group-hover:scale-110 group-hover:bg-primary transition-all duration-300 transform-gpu">
+                  <Mail className="h-5 w-5 text-foreground group-hover:text-primary-foreground transition-colors" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground mb-1">Email</h3>
+                  <h3 className="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">Email</h3>
                   <p className="text-sm text-muted-foreground">your.email@example.com</p>
                 </div>
               </div>
             </Card>
 
-            <Card className="p-6 shadow-elegant border-border">
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-accent rounded-lg">
-                  <Phone className="h-5 w-5 text-foreground" />
+            <Card className="p-6 shadow-3d hover:shadow-3d-hover transition-all duration-500 border-border group hover:-translate-y-1 transform-gpu bg-gradient-card relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="flex items-start gap-4 relative z-10">
+                <div className="p-3 bg-accent rounded-lg shadow-md group-hover:shadow-lg group-hover:scale-110 group-hover:bg-primary transition-all duration-300 transform-gpu">
+                  <Phone className="h-5 w-5 text-foreground group-hover:text-primary-foreground transition-colors" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground mb-1">Phone</h3>
+                  <h3 className="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">Phone</h3>
                   <p className="text-sm text-muted-foreground">+1 (555) 123-4567</p>
                 </div>
               </div>
             </Card>
 
-            <Card className="p-6 shadow-elegant border-border">
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-accent rounded-lg">
-                  <MapPin className="h-5 w-5 text-foreground" />
+            <Card className="p-6 shadow-3d hover:shadow-3d-hover transition-all duration-500 border-border group hover:-translate-y-1 transform-gpu bg-gradient-card relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="flex items-start gap-4 relative z-10">
+                <div className="p-3 bg-accent rounded-lg shadow-md group-hover:shadow-lg group-hover:scale-110 group-hover:bg-primary transition-all duration-300 transform-gpu">
+                  <MapPin className="h-5 w-5 text-foreground group-hover:text-primary-foreground transition-colors" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground mb-1">Location</h3>
+                  <h3 className="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">Location</h3>
                   <p className="text-sm text-muted-foreground">Your City, Country</p>
                 </div>
               </div>

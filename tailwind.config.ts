@@ -52,10 +52,20 @@ export default {
         'gradient-dark': 'var(--gradient-dark)',
         'gradient-light': 'var(--gradient-light)',
         'gradient-subtle': 'var(--gradient-subtle)',
+        'gradient-hero': 'var(--gradient-hero)',
+        'gradient-card': 'var(--gradient-card)',
+        'gradient-overlay': 'var(--gradient-overlay)',
       },
       boxShadow: {
         'elegant': 'var(--shadow-elegant)',
         'hover': 'var(--shadow-hover)',
+        '3d': 'var(--shadow-3d)',
+        '3d-hover': 'var(--shadow-3d-hover)',
+        'inset': 'var(--shadow-inset)',
+      },
+      transitionTimingFunction: {
+        'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
+        'bounce': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
       },
       borderRadius: {
         lg: "var(--radius)",
