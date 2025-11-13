@@ -8,14 +8,14 @@ import valentines from '../images/valentines.png'
 import financial from '../images/financial.png'
 import community from '../images/community.png'
 import petworld from '../images/petworld.png'
+import cafe from '../images/islanilola.png'
+import uic from '../images/uic.jpg'
 const projects = [
   {
     title: "POULTRY MANAGEMENT ENVIRONMENTAL MONITORING SYSTEM",
     description:
-      "A full-featured online store with product management, cart functionality, and secure checkout.",
-    tags: ["React", "TypeScript", "Tailwind" , "Firebase" , "Chart.js", 
-      "IoT" , "MySql" , "Node.js" , "Express.js" , "REST API"
-    ],
+      "An IoT-based monitoring system that tracks poultry house conditions such as temperature, humidity, and gas levels in real time, featuring data visualization dashboards and automated alerts.",
+    tags: ["React", "TypeScript", "Tailwind", "Firebase", "Chart.js", "IoT", "MySQL", "Node.js", "Express.js", "REST API"],
     image: psems,
     github: "https://github.com/GlennOliva/PSEMS-V1",
     demo: "https://psems.vercel.app/",
@@ -23,9 +23,8 @@ const projects = [
   {
     title: "PWA RESUME BUILDER",
     description:
-      "Collaborative task management tool with real-time updates and team features.",
-    tags: ["React", "TypeScript", "Tailwind" , "Chart.js", "MySql" , "Node.js" , "Express.js" , "REST API"
-    ],
+      "A Progressive Web App that allows users to create, customize, and download professional resumes directly from their browser, even offline, with dynamic templates and live previews.",
+    tags: ["React", "TypeScript", "Tailwind", "Chart.js", "MySQL", "Node.js", "Express.js", "REST API"],
     image: resume,
     github: "https://github.com/GlennOliva/PWA--Resume-Builder",
     demo: "https://pwa-resume-builder.vercel.app/",
@@ -33,9 +32,8 @@ const projects = [
   {
     title: "VALENTINES PHOTOBOOTH APP",
     description:
-      "Modern portfolio template with smooth animations and responsive design.",
-      tags: ["React", "TypeScript", "Tailwind" , "Camera API"
-    ],
+      "A fun and interactive web app that uses the Camera API to let users capture, decorate, and download Valentine-themed photos instantly.",
+    tags: ["React", "TypeScript", "Tailwind", "Camera API"],
     image: valentines,
     github: "https://github.com/GlennOliva/Valentine-s-Booth",
     demo: "https://valentine-s-booth.vercel.app/",
@@ -43,37 +41,50 @@ const projects = [
   {
     title: "FINANCIAL MANAGEMENT SYSTEM",
     description:
-      "Real-time weather application with location-based forecasts and interactive maps.",
-      tags: ["React", "TypeScript", "Tailwind" , "Chart.js", "MySql" , "Node.js" , "Express.js" , "REST API"
-    ],
+      "A financial tracking platform that helps users manage income, expenses, and budgets with interactive charts, analytics, and report generation.",
+    tags: ["React", "TypeScript", "Tailwind", "Chart.js", "MySQL", "Node.js", "Express.js", "REST API"],
     image: financial,
     github: "https://github.com/GlennOliva/Capstone-Financial-Literature",
     demo: "https://capstonefinancialapp.vercel.app/",
   },
-
-    {
+  {
     title: "COMMUNITY MANAGEMENT SYSTEM",
     description:
-      "Real-time weather application with location-based forecasts and interactive maps.",
-      tags: ["React", "TypeScript", "Tailwind" , "Chart.js", "MySql" , "Node.js" , "Express.js" , "REST API"
-    ],
+      "A web-based solution for managing local community reports, waste collection schedules, and communication between residents and administrators.",
+    tags: ["React", "TypeScript", "Tailwind", "Chart.js", "MySQL", "Node.js", "Express.js", "REST API"],
     image: community,
     github: "https://github.com/GlennOliva/CommunityWasteApp",
     demo: "https://community-waste-app.vercel.app/",
   },
-
-
-    {
+  {
     title: "DAVAO PETWORLD E-COMMERCE WEBSITE WITH FISH IDENTIFICATION",
     description:
-      "Real-time weather application with location-based forecasts and interactive maps.",
-      tags: ["React", "TypeScript", "Tailwind" , "Chart.js", "MySql" , "Node.js" , "Express.js" , "REST API" , "Flask", "CNN" , "TensorFlow js"
-    ],
+      "An e-commerce platform for pet supplies integrated with a CNN-based fish identification system, allowing users to upload images for species recognition using Flask and TensorFlow.",
+    tags: ["React", "TypeScript", "Tailwind", "Chart.js", "MySQL", "Node.js", "Express.js", "REST API", "Flask", "CNN", "TensorFlow.js"],
     image: petworld,
     github: "https://github.com/GlennOliva/Capstone_DavaoPetworld",
     demo: "https://davaopetworld.netlify.app/",
   },
+  {
+    title: "ISLA NI LOLA FOOD & ORDERING SYSTEM",
+    description:
+      "An online food ordering system that enables customers to browse menus, place orders, and track order statuses in real time for a local café.",
+    tags: ["React", "TypeScript", "Tailwind", "Chart.js", "MySQL", "Node.js", "Express.js", "REST API"],
+    image: cafe,
+    github: "https://github.com/GlennOliva/CafeOrderingSystem",
+    demo: "https://isla-ni-lola-cafe-ordering.vercel.app/",
+  },
+  {
+    title: "UIC MONITORING ATTENDANCE SYSTEM",
+    description:
+      "A barcode-powered attendance monitoring system for UIC students and staff, providing real-time logs, analytics, and secure record management.",
+    tags: ["React", "TypeScript", "Tailwind", "Chart.js", "MySQL", "Node.js", "Express.js", "REST API", "Barcode API"],
+    image: uic,
+    github: "https://github.com/GlennOliva/UIC-Attendance-Monitoring-System",
+    demo: "https://uic-attendance-monitoring-system.vercel.app/",
+  },
 ];
+
 
 export const Projects = () => {
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });

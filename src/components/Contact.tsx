@@ -7,40 +7,62 @@ import { Label } from "@/components/ui/label";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
+import emailjs from "@emailjs/browser";
 
 export const Contact = () => {
-  const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
-  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // For now, just show a success message
-    // In production, you would integrate with a backend service
-    toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
-    
-    setFormData({ name: "", email: "", message: "" });
+  // Intersection Observer
+  const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
+
+  // Handle input changes
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+  // Handle form submission
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    emailjs
+      .send(
+        "service_7bphpm2",       // Your Service ID
+        "template_lqy7nim",      // Your Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        "se6EXpJRF8oxGunru"      // Your Public Key
+      )
+      .then(
+        () => {
+          toast({
+            title: "Message sent!",
+            description: "Thank you for reaching out. I'll get back to you soon.",
+          });
+          setFormData({ name: "", email: "", message: "" });
+        },
+        (error) => {
+          toast({
+            title: "Error sending message",
+            description: "Please try again later.",
+          });
+          console.error("EmailJS Error:", error);
+        }
+      );
   };
 
   return (
     <section ref={ref} id="contact" className="py-24 px-4 bg-gradient-subtle">
       <div className="container mx-auto max-w-5xl">
-        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'fade-in-up' : 'opacity-0'}`}>
+        {/* Heading */}
+        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? "fade-in-up" : "opacity-0"}`}>
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">Get in Touch</h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -49,7 +71,8 @@ export const Contact = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className={`lg:col-span-2 transition-all duration-700 ${isVisible ? 'fade-in-left' : 'opacity-0'}`} style={{ transitionDelay: '200ms' }}>
+          {/* Contact Form */}
+          <div className={`lg:col-span-2 transition-all duration-700 ${isVisible ? "fade-in-left" : "opacity-0"}`} style={{ transitionDelay: "200ms" }}>
             <Card className="p-8 shadow-3d hover:shadow-3d-hover transition-all duration-500 border-border bg-gradient-card group hover:-translate-y-1 transform-gpu relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
@@ -100,7 +123,9 @@ export const Contact = () => {
             </Card>
           </div>
 
-          <div className={`space-y-6 transition-all duration-700 ${isVisible ? 'fade-in-right' : 'opacity-0'}`} style={{ transitionDelay: '400ms' }}>
+          {/* Contact Info */}
+          <div className={`space-y-6 transition-all duration-700 ${isVisible ? "fade-in-right" : "opacity-0"}`} style={{ transitionDelay: "400ms" }}>
+            {/* Email */}
             <Card className="p-6 shadow-3d hover:shadow-3d-hover transition-all duration-500 border-border group hover:-translate-y-1 transform-gpu bg-gradient-card relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="flex items-start gap-4 relative z-10">
@@ -114,6 +139,7 @@ export const Contact = () => {
               </div>
             </Card>
 
+            {/* Phone */}
             <Card className="p-6 shadow-3d hover:shadow-3d-hover transition-all duration-500 border-border group hover:-translate-y-1 transform-gpu bg-gradient-card relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="flex items-start gap-4 relative z-10">
@@ -127,6 +153,7 @@ export const Contact = () => {
               </div>
             </Card>
 
+            {/* Location */}
             <Card className="p-6 shadow-3d hover:shadow-3d-hover transition-all duration-500 border-border group hover:-translate-y-1 transform-gpu bg-gradient-card relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="flex items-start gap-4 relative z-10">

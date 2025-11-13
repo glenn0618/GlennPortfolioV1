@@ -14,7 +14,7 @@ export const Footer = () => {
 
           <div className="flex gap-4">
             <a
-              href="https://github.com/GlennOliva/Capstone_DavaoPetworld"
+              href="https://github.com/GlennOliva"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 bg-primary-foreground/10 rounded-lg hover:bg-primary-foreground/20 transition-colors"
