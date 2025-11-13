@@ -6,8 +6,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
 export const Contact = () => {
+  const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -36,9 +38,9 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 px-4 bg-gradient-subtle">
+    <section ref={ref} id="contact" className="py-24 px-4 bg-gradient-subtle">
       <div className="container mx-auto max-w-5xl">
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'fade-in-up' : 'opacity-0'}`}>
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">Get in Touch</h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -47,7 +49,7 @@ export const Contact = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2">
+          <div className={`lg:col-span-2 transition-all duration-700 ${isVisible ? 'fade-in-left' : 'opacity-0'}`} style={{ transitionDelay: '200ms' }}>
             <Card className="p-8 shadow-3d hover:shadow-3d-hover transition-all duration-500 border-border bg-gradient-card group hover:-translate-y-1 transform-gpu relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
@@ -98,7 +100,7 @@ export const Contact = () => {
             </Card>
           </div>
 
-          <div className="space-y-6">
+          <div className={`space-y-6 transition-all duration-700 ${isVisible ? 'fade-in-right' : 'opacity-0'}`} style={{ transitionDelay: '400ms' }}>
             <Card className="p-6 shadow-3d hover:shadow-3d-hover transition-all duration-500 border-border group hover:-translate-y-1 transform-gpu bg-gradient-card relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="flex items-start gap-4 relative z-10">

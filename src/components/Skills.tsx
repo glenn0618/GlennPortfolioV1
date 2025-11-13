@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Code2, Palette, Database, Layout } from "lucide-react";
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
 const skillCategories = [
   {
@@ -25,10 +26,12 @@ const skillCategories = [
 ];
 
 export const Skills = () => {
+  const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
+
   return (
-    <section id="skills" className="py-24 px-4 bg-gradient-subtle">
+    <section ref={ref} id="skills" className="py-24 px-4 bg-gradient-subtle">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'fade-in-up' : 'opacity-0'}`}>
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">Skills</h2>
           <div className="w-20 h-1 bg-primary mx-auto"></div>
         </div>
@@ -39,7 +42,8 @@ export const Skills = () => {
             return (
               <Card
                 key={index}
-                className="p-8 shadow-3d hover:shadow-3d-hover transition-all duration-500 border-border group hover:-translate-y-2 transform-gpu bg-gradient-card relative overflow-hidden"
+                className={`p-8 shadow-3d hover:shadow-3d-hover transition-all duration-700 border-border group hover:-translate-y-2 transform-gpu bg-gradient-card relative overflow-hidden ${isVisible ? 'fade-in-up' : 'opacity-0'}`}
+                style={{ transitionDelay: `${200 + index * 150}ms` }}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10">

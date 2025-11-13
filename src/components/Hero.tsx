@@ -1,14 +1,17 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
 export const Hero = () => {
+  const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
+
   const scrollToContact = () => {
     const element = document.querySelector("#contact");
     element?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-16 px-4 overflow-hidden">
+    <section ref={ref} id="home" className="relative min-h-screen flex items-center justify-center pt-16 px-4 overflow-hidden">
       {/* Animated gradient background */}
       <div className="absolute inset-0 bg-gradient-hero">
         <div className="absolute inset-0 opacity-30">
@@ -18,7 +21,7 @@ export const Hero = () => {
       </div>
       
       <div className="container mx-auto max-w-5xl text-center space-y-8 relative z-10">
-        <div className="space-y-4 animate-in fade-in duration-700 transform-gpu">
+        <div className={`space-y-4 transform-gpu transition-all duration-700 ${isVisible ? 'fade-in-up' : 'opacity-0'}`}>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-primary-foreground tracking-tight drop-shadow-2xl" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.3)' }}>
             Hello, I'm{" "}
             <span className="relative inline-block">
